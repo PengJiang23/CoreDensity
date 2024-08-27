@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Image from Matrix</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+
+    <script src="lib/d3.min.js"></script>
+    <script src="lib/d3-tip.js"></script>
+
+    <!--    gpu-fdeb 环境-->
+    <script type="text/javascript" src="lib/GpuFdeb/gpu-forcebundling.js"></script>
+    <script type="text/javascript" src="lib/GpuFdeb/arrayUtilities.js"></script>
+    <script type="text/javascript" src="lib/GpuFdeb/GPGPUtility.js"></script>
+    <script type="text/javascript" src="lib/GpuFdeb/three.js"></script>
+    <script type="text/javascript" src="lib/d3-ForceEdgeBundling.js"></script>
+
+
+</head>
+<body>
+    <input type="file" id="fileInput" accept=".txt">
+     <input type="file" id="nodeInput" accept=".csv">
+     <input type="file" id="colorInput" accept=".txt">
+    <canvas id="pixelCanvas" width="800" height="800"></canvas>
+    <script src="js/main.js"></script>
+</body>
+</html>
