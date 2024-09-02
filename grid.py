@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from gridMultiprocessing import calculate_grid_density
+from grid_processing import calculate_grid_density
 import pickle
 from distanceMatrixmp import parallel_distance_matrix_calculation
 from collections import defaultdict

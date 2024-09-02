@@ -118,55 +118,73 @@ function getColorFromQuantity(matrixValue) {
 
 
 
-//     function getColorFromFixedValue(colorValue, matrixValue) {
-// // const baseColors = [
-// //     {r:224, g:236, b:208},
-// //     {r: 255, g: 219, b:230},
-// //     {r:218, g:205, b:241},
-// //     {r:172, g:226, b:224}
-// // ];
-//
+    function getColorFromFixedValue(colorValue, matrixValue) {
+// const baseColors = [
+//     {r:224, g:236, b:208},
+//     {r: 255, g: 219, b:230},
+//     {r:218, g:205, b:241},
+//     {r:172, g:226, b:224}
+// ];
+
+
+     const baseColors = [
+    {r: 172, g: 215, b: 191},  //#acd7bf
+    {r: 161, g: 198, b: 236},  // #a1c6ec
+    {r: 188, g: 236, b: 238},  // #bcecee
+    {r: 251, g: 212, b: 195}   // #fbd4c3
+];
+
+
+//          const baseColors = [
+//     {r: 172, g: 215, b: 191},  //#acd7bf
+//     {r: 161, g: 198, b: 236},
+//              {r: 251, g: 212, b: 195} ,// #a1c6ec
+//     {r: 188, g: 236, b: 238},  // #bcecee
+//       // #fbd4c3
+// ];
+
+
 // const baseColors = [
 //     {r:255, g:0, b:0},
 //     {r: 7, g: 255, b:0},
 //     {r:0, g:15, b:255},
 //     {r:172, g:226, b:224}
 // ];
-//
-//
-//         const startColor = {r: 255, g: 255, b: 255}; // 白色
-//         const endColor = baseColors[colorValue];
-//
-//         const ratio = matrixValue / 255;
-//
-//         const r = Math.round(startColor.r * (1 - ratio) + endColor.r * ratio);
-//         const g = Math.round(startColor.g * (1 - ratio) + endColor.g * ratio);
-//         const b = Math.round(startColor.b * (1 - ratio) + endColor.b * ratio);
-//
-//         return {r, g, b};
-//     }
 
 
-    function getColorFromFixedValue(colorValue, matrixValue) {
-        // 定义基础颜色
-        const baseColors = [
-            {r: 255, g: 0, b: 0},   // 红色
-            {r: 7, g: 255, b: 0},    // 绿色
-            {r: 0, g: 15, b: 255},   // 蓝色
-            {r: 172, g: 226, b: 224} // 青色
-        ];
-
+        const startColor = {r: 255, g: 255, b: 255}; // 白色
         const endColor = baseColors[colorValue];
 
-        // 这里采用指数函数来实现更平滑的颜色过渡
-        const ratio = Math.pow(matrixValue / 255, 2);
+        const ratio = matrixValue / 255;
 
-        const r = Math.round(255 * (1 - ratio) + endColor.r * ratio);
-        const g = Math.round(255 * (1 - ratio) + endColor.g * ratio);
-        const b = Math.round(255 * (1 - ratio) + endColor.b * ratio);
+        const r = Math.round(startColor.r * (1 - ratio) + endColor.r * ratio);
+        const g = Math.round(startColor.g * (1 - ratio) + endColor.g * ratio);
+        const b = Math.round(startColor.b * (1 - ratio) + endColor.b * ratio);
 
         return {r, g, b};
     }
+
+
+    // function getColorFromFixedValue(colorValue, matrixValue) {
+    //     // 定义基础颜色
+    //     const baseColors = [
+    //         {r: 255, g: 0, b: 0},   // 红色
+    //         {r: 7, g: 255, b: 0},    // 绿色
+    //         {r: 0, g: 15, b: 255},   // 蓝色
+    //         {r: 172, g: 226, b: 224} // 青色
+    //     ];
+    //
+    //     const endColor = baseColors[colorValue];
+    //
+    //     // 这里采用指数函数来实现更平滑的颜色过渡
+    //     const ratio = Math.pow(matrixValue / 255, 2);
+    //
+    //     const r = Math.round(255 * (1 - ratio) + endColor.r * ratio);
+    //     const g = Math.round(255 * (1 - ratio) + endColor.g * ratio);
+    //     const b = Math.round(255 * (1 - ratio) + endColor.b * ratio);
+    //
+    //     return {r, g, b};
+    // }
 
 
     function adjustColorForBrightnessAndSaturation(color, ratio) {
